@@ -1,0 +1,88 @@
+
+Account:
+	has email
+	has username
+	has password
+	has avatar
+	
+User:
+	has Account
+	make and edit their own Account
+	posts Piece of Text
+	edits their own Piece of Text
+	deletes their own Piece of Text
+	votes on Piece of Text
+	adds friends (other Users)	-- is befriended
+	posts on Walls of friends
+	follows other Users 			-- is followed
+	reports misUsers				-- is reported (can view the reports he/she has made ... can view reports made against them)
+	has reputation (from votes)
+	has interests
+	has their own biography
+	has credentials (verified degrees from universities ... verified experience)
+	has Wall
+	sends and receives PMs
+	creates and joins Groups
+	creates and joins Rooms
+
+Wall:
+	belongs to User
+	has Pieces of Text posted to it
+	has Media alone posted to it
+
+Media:
+	is Audio
+	is Video
+	is an Image
+	is a Link
+
+Moderator:
+	is User (with additional capabilities)
+	can ban misUsers
+	can unban Users
+	views and assesses all reports
+	deletes any Piece of Text
+	
+Piece of Text:
+	has formatting
+	has writers (Users)
+	has editors (writer of itself)
+	has time when posted
+	has time(s) when edited
+	has types (Question, Answer, Reply)
+	has votes
+	can be reported (by Users)
+	has tags
+	can be shared (by Users)
+	can contain Media
+
+Question:
+	is Piece of Text
+	has Answer(s)
+	has best answer (which is an Answer)
+
+Answer:
+	is Piece of Text
+	has Reply(ies)
+	has "best status"
+
+Reply:
+	is Piece of Text
+	has Reply(ies)
+	has replied_to (an Answer)
+
+Room:
+	has members (Users)
+	has themed discussion
+	has formal Questions, with respective Answers and Replies
+
+Conversation:
+	has messages between Users
+	informal -- no Questions, Answers, Replies
+	unformatted text
+
+Group:
+	more than 2 Users
+
+PM:
+	2 Users only
