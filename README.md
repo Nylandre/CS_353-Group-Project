@@ -7,5 +7,5 @@
 ##Members
 	Ali Altaf Salemwala
 	Ekin Uyumaz
-	Irmak Akkuzuoğlu
+	Irmak Akkuzuluoğlu
 	Gökçe Şakir Özyurt
