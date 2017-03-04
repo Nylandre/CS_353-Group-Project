@@ -1,5 +1,5 @@
 Introduction
-	This report is the Project Proposal for our Project: A Social Network for Questions and Answers. The report will contain a short description of the program we will create, discuss the need for a database system for this project, present an Entity-Relationship diagram for the system, and discuss the advantages and disadvantages of the system used. It will end with a short list of our planned actions.
+	This report is the Project Proposal for our Project: A Social Network for Questions and Answers. The report will contain a short description of the program we will create, discuss the need for a database system for this project, present an Entity-Relationship diagram for the system, and discuss the advantages and disadvantages of the system used. It will end with a short list of our planned future actions.
 
 Our Program
 	The proposed program is an online social network service aimed at spreading knowledge and connecting the learners with the learned by providing a platform where users may post questions about topics they are curious about, and receive answers from other users. While anybody can post on the service, users with verified experience and knowledge relevant to the topic get special boosts. Users can also vote on posts made by other Users, allowing the popular to rise to the top.
@@ -17,3 +17,6 @@ Our Program
 	Searches through the service allow Users to search by UserName, Question, Tag, or Room. Users can choose to set privacy settings limiting the visibility of their profiles, restricting their appearance in searches, and also limit interaction with other members. 
 	
 	Our system mixes aspects of many pre-existing services, and one can check them to get an idea of what our features mean. Quora, StackExchange, and Reddit are the primary inspirations, while some ideas are also influenced by FaceBook, Twitter, and GoodReads.
+
+The Need
+	This project consists of a large collection of Users with complex relations amongst themselves, such as friends and followers. A database can model these relationships and allow changes to be made to these relationships in an efficient and controlled manner. The software needs to be able to handle Reports made by Users, banned and unbanned Users, messages, Questions and Answers posted, along with the inherent attributes of the other entities of the system. To model this complexity and allow the administrators to control the system, a database system is required.
