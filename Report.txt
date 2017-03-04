@@ -13,10 +13,29 @@ Our Program
 	The accounts made by Users are registered using email addresses, and each is given a unique ID. Users can edit attributes of their accounts if they prefer. Users may also add interests and biographies about themselves to show to other Users.
 	
 	In order to facilitate focused discussion, Users will be allowed to create special Rooms where discussions focused on a certain topic are held, and only Questions related to the topic are posted. Users are free to join and leave these Rooms, and give them names as they please.
+
+	Some Rooms are provided to all Users in advance, to help start the discussion. These preset categories are: Psychology -- Entertainment -- Food -- History -- Travel -- Business -- Music -- Science
 	
 	Searches through the service allow Users to search by UserName, Question, Tag, or Room. Users can choose to set privacy settings limiting the visibility of their profiles, restricting their appearance in searches, and also limit interaction with other members. 
 	
 	Our system mixes aspects of many pre-existing services, and one can check them to get an idea of what our features mean. Quora, StackExchange, and Reddit are the primary inspirations, while some ideas are also influenced by FaceBook, Twitter, and GoodReads.
 
 The Need
-	This project consists of a large collection of Users with complex relations amongst themselves, such as friends and followers. A database can model these relationships and allow changes to be made to these relationships in an efficient and controlled manner. The software needs to be able to handle Reports made by Users, banned and unbanned Users, messages, Questions and Answers posted, along with the inherent attributes of the other entities of the system. To model this complexity and allow the administrators to control the system, a database system is required.
+	This project consists of a large collection of Users with complex relations amongst themselves, such as friends and followers. A database can model these relationships and allow changes to be made to them in an efficient and controlled manner. The software needs to be able to handle Reports made by Users, the status of banned and unbanned Users, messages, Groups, Rooms, Questions, Answers and Replies posted, along with the attributes inside the relations between these entities. To model this complexity and to allow the administrators to control and alter the model as is required, a database system is required.
+
+Requirements
+	A database system to coordinate the relationships between the many entities in the system, and to ease the addition or removal of features in the future. The server will hopefully be maintained on the laptop of a group member. The user should have no direct contact with the database, and instead should only be able to alter it using a preset interface.
+
+	A website the users may use the service to its fullest extent. It should be simple and intuitive, but well-designed enought to ensure the use of all features. Database queries will be automatically generated using the websites interface.
+
+Limitations
+	We need to design the system so that Moderators have enough power to keep the forum within the rule limits, but not enough to abuse their power. We want to keep them answerable to the Users.
+
+	We are not sure how much memory we will have available to store information, so we wil need to be cautious of the amount of spaceour design takes.
+
+	The system is not made with scalability in mind, and so it will not be able to handle heavy loads of users.
+
+	A relatively secure network is needed to handle passwords, account information, and facilitate logins. Users may not want to reveal their real identities, and if they do, they will want to guard access to it.
+
+	Online forums and Question-Answer sites can often have difficult User Interfaces, so our goal will be to design the system in such a way that it enables a simple UI.
+
