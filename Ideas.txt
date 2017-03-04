@@ -1,88 +1,154 @@
 
 Account:
-	has email
-	has username
-	has password
-	has avatar
-	
+	has:
+		uID (1 to 1) (PK) (FK to User)
+		email
+		username
+		password
+		avatar
+
 User:
-	has Account
-	make and edit their own Account
+	has:
+		uID for Account (1 to 1), for Wall (1 to 1) (PK)
+		interests (Post *)
+		biography (Post)
+		reputation {Upvotes on all FormattedText, Downvotes on all FormattedText}
+		credentials {university_degrees (Text) *, relevant_experience (Text) *}
+
+	controls:
+		Account (1 to 1)
+	
 	posts Piece of Text
-	edits their own Piece of Text
-	deletes their own Piece of Text
-	votes on Piece of Text
-	adds friends (other Users)	-- is befriended
-	posts on Walls of friends
-	follows other Users 			-- is followed
-	reports misUsers				-- is reported (can view the reports he/she has made ... can view reports made against them)
-	has reputation (from votes)
-	has interests
-	has their own biography
-	has credentials (verified degrees from universities ... verified experience)
-	has Wall
+	can:
+		edit their own Post
+		delete their own Post
+		
 	sends and receives PMs
 	creates and joins Groups
 	creates and joins Rooms
 
 Wall:
-	belongs to User
-	has Pieces of Text posted to it
-	has Media alone posted to it
+	has:
+		uID (1 to 1) (PK) (FK to User)
+	has:
+		posteds (Text *)
 
-Media:
-	is Audio
-	is Video
-	is an Image
-	is a Link
+Friend:
+	has:
+		PartyOne (FK to uID of User) (PK)
+		PartyOne (FK to uID of User) (PK)
 
-Moderator:
-	is User (with additional capabilities)
-	can ban misUsers
-	can unban Users
-	views and assesses all reports
+Follow:
+	has:
+		Follower (FK to uID of User) (PK)
+		Followed (FK to uID of User) (PK)
+		
+BannedUser:
+	has
+		bannedID (FK to uID of User) (PK)
+		bannedBy (FK to modID of Mod)
+Mod:
+	is:
+		User
+	has:
+		modID (FK to uID of User)
+		BannedUsers (FK to uID of User)
+		UnbannedUsers (FK to uID of User)
+	can:
+		view all reports
 	deletes any Piece of Text
 	
+Report:
+	has:
+		Reporter (FK to uID of User)
+		Reportee (FK to uID of User)
+		Reported (Text)
+
 Piece of Text:
-	has formatting
-	has writers (Users)
-	has editors (writer of itself)
-	has time when posted
-	has time(s) when edited
-	has types (Question, Answer, Reply)
-	has votes
-	can be reported (by Users)
-	has tags
 	can be shared (by Users)
-	can contain Media
+
+Post:
+	has:
+		postedBy (FK to uID of User)
+		TimePosted (Date & Time)
+		TimeEdited (Date & Time)
+		Text *
+		Media *
+
+SharedToWall:
+	has:
+		Sharer (FK to uID of User)
+		SharedTo (FK to uID of User)
+		TimeShared (Date & Time)
+Text:
+	is:
+		Post
+	has:
+		Writer (FK to uID of User)
+		Editor (FK to uID of User)
+
+UnFormattedText:
+	is:
+		Text
+
+FormattedText:
+	is:
+		Text
+	has:
+		Formatting
+		Upvotes
+		Downvotes
+		Tag * (UnFormattedText)
+
+Media:
+	can be:
+		Audio
+		Video
+		Image
+		Link
 
 Question:
-	is Piece of Text
-	has Answer(s)
-	has best answer (which is an Answer)
+	is:
+		FormattedText
+	has:
+		Answer *
+		BestAnswer (Answer ?)
 
 Answer:
-	is Piece of Text
-	has Reply(ies)
-	has "best status"
+	is:
+		FormattedText
+	has:
+		Reply *
 
 Reply:
-	is Piece of Text
-	has Reply(ies)
-	has replied_to (an Answer)
+	is:
+		FormattedText
+	has:
+		Reply *
+	from:
+		Answer
 
 Room:
-	has members (Users)
+	has:
+		members (User +)
+		Question *
+		name
 	has themed discussion
 	has formal Questions, with respective Answers and Replies
 
-Conversation:
-	has messages between Users
-	informal -- no Questions, Answers, Replies
-	unformatted text
+Convo:
+	has:
+		UnFormattedText
 
 Group:
-	more than 2 Users
+	is:
+		Convo
+	has:
+		Members (User +) (FK to uID of User)
 
 PM:
-	2 Users only
+	is:
+		Convo
+	has:
+		PartyOne (FK to uID of User) (PK)
+		PartyTwo (FK to uID of User) (PK)

@@ -1,0 +1,19 @@
+Introduction
+	This report is the Project Proposal for our Project: A Social Network for Questions and Answers. The report will contain a short description of the program we will create, discuss the need for a database system for this project, present an Entity-Relationship diagram for the system, and discuss the advantages and disadvantages of the system used. It will end with a short list of our planned actions.
+
+Our Program
+	The proposed program is an online social network service aimed at spreading knowledge and connecting the learners with the learned by providing a platform where users may post questions about topics they are curious about, and receive answers from other users. While anybody can post on the service, users with verified experience and knowledge relevant to the topic get special boosts. Users can also vote on posts made by other Users, allowing the popular to rise to the top.
+	
+	Posts may consist of simple text, links to external sites, audio, video, images, or any combination of them. Users can delete their own posts for any reason they see fit. Posts may also contain tags allowing a quick search for posts related to a certain topic. Tags can be entered by a User before submitting a post.
+	
+	Users can choose to befriend other Users they get along with, or follow interesting Users for updates regarding their activities. Users can also privately message each other, or have group chatrooms, where informal conversation can be held. There are no votes for messages in private or group chats. Users can post items to the "Walls" of their friends. Walls are spaces belonging to each User where they (or their friends) may post items of interest.
+	
+	Moderators (Mods) are special Users who moderate the content of the site, ensuring that members behave according to the rules. As a result, Mods have the ability to delete inappropriate posts and ban Users who misbehave. They may also unban Users for any reason they find appropriate.
+	
+	The accounts made by Users are registered using email addresses, and each is given a unique ID. Users can edit attributes of their accounts if they prefer. Users may also add interests and biographies about themselves to show to other Users.
+	
+	In order to facilitate focused discussion, Users will be allowed to create special Rooms where discussions focused on a certain topic are held, and only Questions related to the topic are posted. Users are free to join and leave these Rooms, and give them names as they please.
+	
+	Searches through the service allow Users to search by UserName, Question, Tag, or Room. Users can choose to set privacy settings limiting the visibility of their profiles, restricting their appearance in searches, and also limit interaction with other members. 
+	
+	Our system mixes aspects of many pre-existing services, and one can check them to get an idea of what our features mean. Quora, StackExchange, and Reddit are the primary inspirations, while some ideas are also influenced by FaceBook, Twitter, and GoodReads.
